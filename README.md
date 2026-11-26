@@ -56,7 +56,7 @@ The application uses time–drawdown measurements entered into an Excel workshee
 | Time (\(t\)) | Elapsed time since pumping began | min |
 | Drawdown (\(s\)) | Observed groundwater-level decline | m |
 | Pumping Time (\(t\)) | Total pumping time  | min |
-| Pumping Rate (\(Q\)) | The constant volumetric discharge | V/t |
+| Pumping Rate (\(Q\)) | The constant volumetric discharge | m<sup>3</sup>/min |
 | Aquifer Thickness (\(m\)) | If the aquifer thickness is known, \(K\) can be calculated | m |
 | r (\(m\)) | Radial distance from the pumping well  | m |
 
