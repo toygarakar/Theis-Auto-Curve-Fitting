@@ -41,7 +41,7 @@ and:
 
 The application estimates the aquifer parameters by fitting the theoretical drawdown response to observed pumping-test data.
 
-Hydraulic conductivity (\(K\)) can be derived from transmissivity when the saturated aquifer thickness (\(b\)) is known:
+Hydraulic conductivity \(K\) can be derived from transmissivity when the saturated aquifer thickness \(b\) is known:
 
 $$
 K=\frac{T}{b}
@@ -53,12 +53,12 @@ The application uses time–drawdown measurements entered into an Excel workshee
 
 | Variable | Description | Example unit |
 |---|---|---|
-| Time (\(t\)) | Elapsed time since pumping began | min |
-| Drawdown (\(s\)) | Observed groundwater-level decline | m |
-| Pumping Time (\(t\)) | Total pumping time  | min |
-| Pumping Rate (\(Q\)) | The constant volumetric discharge | m<sup>3</sup>/min |
-| Aquifer Thickness (\(m\)) | If the aquifer thickness is known, \(K\) can be calculated | m |
-| r (\(m\)) | Radial distance from the pumping well  | m |
+| Time \(t\))| Elapsed time since pumping began | min |
+| Drawdown \(s\) | Observed groundwater-level decline | m |
+| Pumping Time \(t\) | Total pumping time  | min |
+| Pumping Rate \(Q\) | The constant volumetric discharge | m<sup>3</sup>/min |
+| Aquifer Thickness \(m\) | If the aquifer thickness is known, \(K\) can be calculated | m |
+| r \(m\) | Radial distance from the pumping well  | m |
 
 The pumping rate, observation-well distance, and other required model settings must be specified as required by the application.
 
