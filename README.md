@@ -32,8 +32,8 @@ $$
 and:
 
 - \(s\) = drawdown  (L)
-- \(Q\) = pumping rate (L3/T)
-- \(T\) = transmissivity (L2/T)
+- \(Q\) = pumping rate (<L<sup>3</sup>/T)
+- \(T\) = transmissivity (L<sup>2</sup>/T)
 - \(S\) = storativity (dimensionless)
 - \(r\) = radial distance from the pumping well to the observation point (L)
 - \(t\) = elapsed time (t)
