@@ -9,7 +9,7 @@ The application automates the curve-fitting process through iterative optimizati
 
 - **Automated curve fitting:** Fits the Theis analytical solution to observed time–drawdown data.
 - **Parameter estimation:** Estimates transmissivity \(T\) and storativity \(S\) through iterative optimization.
-- **Fit assessment:** Reports numerical error metrics, including weighted and unweighted sum of squared errors (SSE) and (R^2), as implemented in the application.
+- **Fit assessment:** Reports numerical error metrics, including weighted and unweighted sum of squared errors (SSE) and (R<sup>2</sup>), as implemented in the application.
 - **Graphical visualization:** Displays observed drawdown measurements as blue markers and the fitted Theis curve as a red line.
 - **Excel-based workflow:** Performs the analysis within Microsoft Excel using VBA, without requiring a separate numerical modelling environment.
 
