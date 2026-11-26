@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated publication."
+title: "Theis Auto Curve Fitting"
+version: 1.0.0
+type: software
+authors:
+  - family-names: "AKAR"
+    given-names: "Ali Toygar"
+license: MIT
+repository-code: "https://github.com/KULLANICI_ADIN/theis-auto-curve-fitting"
