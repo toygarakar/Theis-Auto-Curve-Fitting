@@ -94,6 +94,23 @@ The application provides the following results, subject to the implemented funct
 
 The precise interpretation of each fit statistic depends on its mathematical definition and implementation.
 
+## Weighted Logarithmic Error Metric
+
+The application minimizes a weighted sum of squared base-10 logarithmic residuals:
+
+\[
+SSE_W = \sum_{i=1}^{N} w_i
+\left[
+\log_{10}\left(
+\frac{s_{i,\mathrm{obs}}}{s_{i,\mathrm{calc}}}
+\right)
+\right]^2
+\]
+
+where \(N\) is the number of observations, \(w_i\) is the weight assigned to observation \(i\), \(s_{i,\mathrm{obs}}\) is the observed drawdown, and \(s_{i,\mathrm{calc}}\) is the corresponding drawdown calculated using the Theis solution.
+
+The logarithmic residuals quantify discrepancies in terms of ratios rather than absolute differences. The weighting scheme determines the relative contribution of each observation to the objective function.
+
 ## Scope and Limitations
 
 The Theis analytical solution assumes an idealized aquifer system, including a homogeneous, isotropic, laterally extensive confined aquifer, fully penetrating pumping and observation wells, and constant pumping rate.
