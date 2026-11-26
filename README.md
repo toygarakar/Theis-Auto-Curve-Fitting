@@ -58,7 +58,7 @@ The application uses time–drawdown measurements entered into an Excel workshee
 | Pumping Time \(t\) | Total pumping time  | min |
 | Pumping Rate \(Q\) | The constant volumetric discharge | m<sup>3</sup>/min |
 | Aquifer Thickness \(m\) | If the aquifer thickness is known, \(K\) can be calculated | m |
-| r \(m\) | Radial distance from the pumping well  | m |
+| Distance - r \(m\) | Radial distance from the pumping well  | m |
 
 The pumping rate, observation-well distance, and other required model settings must be specified as required by the application.
 
