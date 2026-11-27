@@ -111,6 +111,59 @@ where \(N\) is the number of observations, \(w_i\) is the weight assigned to obs
 
 The logarithmic residuals quantify discrepancies in terms of ratios rather than absolute differences. The weighting scheme determines the relative contribution of each observation to the objective function.
 
+## Adaptive Outlier Detection and Weighted Curve Fitting
+
+The application uses an adaptive outlier-detection procedure to reduce the influence of observations that deviate substantially from the fitted Theis solution.
+
+### Logarithmic Residuals
+
+For each observation, the absolute base-10 logarithmic residual is calculated as
+
+\[
+e_i=\left|\log_{10}\left(\frac{y_i}{\hat{y}_i}\right)\right|
+\]
+
+where \(y_i\) is the observed drawdown and \(\hat{y}_i\) is the corresponding drawdown predicted by the Theis model.
+
+The residuals are normalized using their standard deviation:
+
+\[
+z_i^*=\frac{e_i}{\operatorname{StDev}(e)}
+\]
+
+Here, \(z_i^*\) denotes a normalized absolute logarithmic residual. Unlike a conventional statistical z-score, this quantity is not centered by subtracting the mean residual.
+
+### Outlier Classification
+
+An observation is classified as an outlier when its normalized residual exceeds a threshold:
+
+\[
+z_i^*>\mathrm{thr}
+\]
+
+The default threshold is \(\mathrm{thr}=3\). Observations exceeding this threshold are excluded or strongly downweighted in the weighted fitting objective, according to the implemented weighting scheme.
+
+### Adaptive Threshold Relaxation
+
+During the initial stages of optimization, the fitted curve may be far from the observed data. In this situation, applying the default threshold immediately may classify too many observations as outliers and prevent the optimization from progressing effectively.
+
+To address this issue, the algorithm temporarily relaxes the threshold by increasing it by a factor of 1.3 when the initial fit produces excessive outlier classification. As the fit improves, the threshold is restored to its default value of 3, and the outlier set is reassessed.
+
+This adaptive procedure is intended to facilitate optimization from a poor initial parameter estimate while allowing the outlier classification to evolve as the fitted curve approaches the observations.
+
+### Weighted Objective Function
+
+The optimization minimizes the weighted sum of squared base-10 logarithmic residuals:
+
+\[
+SSE_W=\sum_{i=1}^{N}w_i
+\left[\log_{10}\left(\frac{y_i}{\hat{y}_i}\right)\right]^2
+\]
+
+where \(w_i\) is the weight assigned to observation \(i\), determined by the outlier-handling procedure.
+
+The weighted objective function reduces the contribution of observations identified as outliers, allowing the estimated aquifer parameters to be less sensitive to strongly discrepant measurements.
+
 ## Scope and Limitations
 
 The Theis analytical solution assumes an idealized aquifer system, including a homogeneous, isotropic, laterally extensive confined aquifer, fully penetrating pumping and observation wells, and constant pumping rate.
