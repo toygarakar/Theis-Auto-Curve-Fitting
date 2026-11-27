@@ -98,14 +98,9 @@ The precise interpretation of each fit statistic depends on its mathematical def
 
 The application minimizes a weighted sum of squared base-10 logarithmic residuals:
 
-\[
-SSE_W = \sum_{i=1}^{N} w_i
-\left[
-\log_{10}\left(
-\frac{s_{i,\mathrm{obs}}}{s_{i,\mathrm{calc}}}
-\right)
-\right]^2
-\]
+$$
+SSE_W = \sum_{i=1}^{N} w_i \left[ \log_{10}\left( \frac{s_{i,\mathrm{obs}}}{s_{i,\mathrm{calc}}} \right) \right]^2
+$$
 
 where \(N\) is the number of observations, \(w_i\) is the weight assigned to observation \(i\), \(s_{i,\mathrm{obs}}\) is the observed drawdown, and \(s_{i,\mathrm{calc}}\) is the corresponding drawdown calculated using the Theis solution.
 
@@ -119,27 +114,27 @@ The application uses an adaptive outlier-detection procedure to reduce the influ
 
 For each observation, the absolute base-10 logarithmic residual is calculated as
 
-\[
+$$
 e_i=\left|\log_{10}\left(\frac{y_i}{\hat{y}_i}\right)\right|
-\]
+$$
 
 where \(y_i\) is the observed drawdown and \(\hat{y}_i\) is the corresponding drawdown predicted by the Theis model.
 
 The residuals are normalized using their standard deviation:
 
-\[
-z_i^*=\frac{e_i}{\operatorname{StDev}(e)}
-\]
+$$
+z_i^* = \frac{e_i}{\mathrm{StDev}(e)}
+$$
 
-Here, \(z_i^*\) denotes a normalized absolute logarithmic residual. Unlike a conventional statistical z-score, this quantity is not centered by subtracting the mean residual.
+Here, \(z_i*\) denotes a normalized absolute logarithmic residual. Unlike a conventional statistical z-score, this quantity is not centered by subtracting the mean residual.
 
 ### Outlier Classification
 
 An observation is classified as an outlier when its normalized residual exceeds a threshold:
 
-\[
+$$
 z_i^*>\mathrm{thr}
-\]
+$$
 
 The default threshold is \(\mathrm{thr}=3\). Observations exceeding this threshold are excluded or strongly downweighted in the weighted fitting objective, according to the implemented weighting scheme.
 
@@ -155,10 +150,10 @@ This adaptive procedure is intended to facilitate optimization from a poor initi
 
 The optimization minimizes the weighted sum of squared base-10 logarithmic residuals:
 
-\[
+$$
 SSE_W=\sum_{i=1}^{N}w_i
 \left[\log_{10}\left(\frac{y_i}{\hat{y}_i}\right)\right]^2
-\]
+$$
 
 where \(w_i\) is the weight assigned to observation \(i\), determined by the outlier-handling procedure.
 
